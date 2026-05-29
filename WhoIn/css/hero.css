@@ -1,0 +1,112 @@
+/* ============================================
+   WhoIn — Hero Layout & Visual Backdrops
+   ============================================ */
+
+/* ---------- Hero Section ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-4xl) var(--space-xl);
+  overflow: hidden;
+}
+
+.hero-bg-orbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: float 20s ease-in-out infinite;
+}
+
+.hero-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: var(--color-indigo);
+  top: -200px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.hero-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: var(--color-cyan);
+  bottom: -150px;
+  left: -100px;
+  animation-delay: -7s;
+}
+
+.hero-orb-3 {
+  width: 350px;
+  height: 350px;
+  background: var(--color-amber);
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: -14s;
+  opacity: 0.08;
+}
+
+.hero-headline {
+  font-size: var(--font-size-hero);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-headline .gradient-text {
+  color: var(--gradient-primary);
+}
+
+.hero-dotted-line {
+  width: min(600px, 80%);
+  height: 1px;
+  margin: var(--space-lg) auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-dotted-line line {
+  stroke: var(--text-muted);
+  stroke-width: 1;
+  stroke-dasharray: 6 6;
+}
+
+.hero-subtitle {
+  font-size: clamp(var(--font-size-base), 2vw, var(--font-size-xl));
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Responsive Hero Adjustments ---------- */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-3xl) var(--space-md);
+  }
+}
